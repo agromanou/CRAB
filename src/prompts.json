@@ -1,0 +1,47 @@
+[
+    {
+        "prompt_name": "pairwise_binary_w_context",
+        "prompt_template": {
+            "instructions": "You are a helpful assistant for causal relationship understanding.\nThink about the cause-and-effect relationships related to context.",
+            "shot": "",
+            "question": "\n\nContext:\n{}\n{}\n\nEvent 1: {}\nEvent 2: {}\n\nDid Event 1 cause Event 2 to happen?\nPlease answer in a single word: yes or no.\n"
+        },
+        "source": "https://arxiv.org/pdf/2305.00050.pdf"
+    },
+    {
+        "prompt_name": "pairwise_bins_3_w_context",
+        "prompt_template": {
+            "instructions": "You are a helpful assistant for causal relationship understanding.\nThink about the cause-and-effect relationships related to context.",
+            "shot": "",
+            "question": "\n\nContext:\n{}\n{}\n\nEvent 1: {}\nEvent 2: {}\n\nHow much did event 1 cause event 2 to happen? \n[A] High causality: Event 1 is definitely responsible for Event 2.\n[B] Medium causality: Event 1 might have been responsible for Event 2.\n[C] Low causality: Events are somehow related but definitely NOT causally related.\n\nLet’s work this out in a step by step way to be sure that we have the right answer. Then provide your final answer within the tags, <Answer>A/B/C</Answer>.\n"
+        },
+        "source": ""
+    },
+    {
+        "prompt_name": "pairwise_bins_4_w_context",
+        "prompt_template": {
+            "instructions": "You are a helpful assistant for causal relationship understanding.\nThink about the cause-and-effect relationships related to context.",
+            "shot": "",
+            "question": "\n\nContext:\n{}\n{}\n\nEvent 1: {}\nEvent 2: {}\n\nHow much did event 1 cause event 2 to happen? \n[A] High causality: Event 1 is definitely responsible for Event 2.\n[B] Medium causality: Event 1 might have been responsible for Event 2.\n[C] Low causality: The context gives a little indication that there is a connection between the two events, but background info might suggest a low causal connection.\n[D] No causality: Events are somehow related but definitely NOT causally related.\n\nLet’s work this out in a step by step way to be sure that we have the right answer. Then provide your final answer within the tags, <Answer>A/B/C/D</Answer>.\n"
+        },
+        "source": ""
+    },
+    {
+        "prompt_name": "pairwise_score_w_context",
+        "prompt_template": {
+            "instructions": "You are a helpful assistant for causal relationship understanding.\nThink about the cause-and-effect relationships related to context.",
+            "shot": "",
+            "question": "\n\nContext:\n{}\n{}\n\nEvent 1: {}\nEvent 2: {}\n\nWhat is the causality score between Event A and Event B from 0 to 100?\nScore above 80: Event 1 is definitely responsible for Event 2.\nScore between 50-80: Event 1 might have been responsible for Event 2.\nScore lower than 50 Events are somehow related but definitely NOT causally related.\n\nLet’s work this out in a step by step way to be sure that we have the right answer. \nThen provide your final answer within the tags, <Answer>score</Answer>.\n"
+        },
+        "source": "gpt-3"
+    },
+    {
+        "prompt_name": "mcq_w_context",
+        "prompt_template": {
+            "instructions": "You are a helpful assistant for causal relationship understanding.\nThink about the cause-and-effect relationships related to context.",
+            "shot": "",
+            "question": "\n\nContext:\n{}\n{}\n{}\n{}\n{}.\n\nEvent: {}\n\nWhat is the most likely cause of this event? \nA. {}\nB. {}\nC. {}\nD. {}\n\nLet’s work this out in a step by step way to be sure that we have the right answer. Then provide your final answer within the tags, <Answer>A/B/C/D</Answer>.\n"
+        },
+        "source": "https://arxiv.org/pdf/2305.00050.pdf"
+    }
+]
